@@ -20,10 +20,10 @@ if (app.Environment.IsDevelopment())
     });
 
     // domain/api-docs/index.html
-    app.UseReDoc(options =>
-    {
-        options.SpecUrl("/openapi/v1.json");
-    });
+    //app.UseReDoc(options =>
+    //{
+    //    options.SpecUrl("/openapi/v1.json");
+    //});
 }
 
 app.UseHttpsRedirection();
