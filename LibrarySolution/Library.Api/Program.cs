@@ -12,6 +12,18 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+
+    // domain/swagger/index.html
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint("/openapi/v1.json", "OpenAPI V1");
+    });
+
+    // domain/api-docs/index.html
+    app.UseReDoc(options =>
+    {
+        options.SpecUrl("/openapi/v1.json");
+    });
 }
 
 app.UseHttpsRedirection();
